@@ -1,0 +1,8 @@
+# 云服务器一般已预装 torch / torchvision（PyTorch 镜像），无需重复安装
+# torch>=2.0
+# torchvision>=0.15
+numpy
+pandas
+scikit-learn
+matplotlib
+pillow

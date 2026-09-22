@@ -1,0 +1,40 @@
+{
+  "arch": "resnet18",
+  "labels": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "neutral"
+  ],
+  "num_classes": 7,
+  "input_size": 224,
+  "input_channels": 3,
+  "preprocess": "人脸裁剪(外扩约10%) -> 灰度 -> 复制成3通道 -> Resize(input_size,input_size) -> ToTensor(0-1) -> Normalize(mean,std)",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "fc": "Sequential(Dropout(0.3), Linear(512, 7))",
+  "weights_format": "state_dict",
+  "torch": "2.4.1+cu124",
+  "torchvision": "0.19.1+cu124",
+  "best_epoch": 24,
+  "val_acc": 0.7018,
+  "test_acc": 0.7017,
+  "test_macro_f1": 0.6913,
+  "options": {
+    "freeze_backbone": false,
+    "aug": true,
+    "class_weight": false,
+    "pretrained": true
+  }
+}
